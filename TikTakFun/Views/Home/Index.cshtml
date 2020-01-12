@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Tic Tac Toe Game";
+}
+<link href="~/Content/gamestyle.css" rel="stylesheet" type="text/css" />
+<div ng-app="TicTacFunApp" ng-controller="TicTacFunCtrl as game" class="mainholder" ng-cloak>
+    <img src="~/Content/images/ticktaclogo.png" />
+    <div class="container">
+        <div class="well">
+            <div class="contentholder">
+                <div class="topcontainer">
+                    <div class="statustholder">
+                        <div>
+                            <ul class="list-group" ng-hide="game.winner || game.draw">
+                                <li class="list-group-item ">  <span ng-class="{'activeplayer': game.currentPlayer == 'X' || game.currentPlayer == 'notactiveplayer'}"><i class="fa fa-user "></i> Player X </span></li>
+                                <li class="list-group-item ">  <span ng-class="{'activeplayer': game.currentPlayer == 'O' || game.currentPlayer == 'notactiveplayer'}"><i class="fa fa-user "></i> Player O</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resultholder" ng-show="game.winner || game.draw">
+                        <div class="panel panel-default result-panel" ng-show="game.winner">
+                            <i class="fa fa-times fa-3x X-Result" ng-show="game.currentPlayer=='X'"></i>
+                            <i class="fa fa-circle-o fa-3x O-Result" ng-show="game.currentPlayer=='O'"></i>
+                            <div class="panel-body"> 
+                                <span class="span-result"> <i class="fa fa-trophy "></i>  Player {{ game.currentPlayer }} won!</span>
+                            </div>
+                        </div>
+                        <div class="panel panel-default result-panel" ng-show="game.draw">
+                            <i class="fa fa-times fa-3x X-Result"></i>
+                            <i class="fa fa-circle-o fa-3x O-Result"></i>
+                            <div class="panel-body"> 
+                                <span class="span-result"> <i class="fa fa-trophy "></i> Game Draw!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gamecontentholder">
+                    <div ng-repeat="row in game.board" class="row">
+                        <div class="btn-col col-md-3 col-lg-3 col-sm-3 col-xs-3" style="max-width:100px"
+                             ng-repeat="cell in row"
+                             ng-disabled="game.isTaken(cell);"
+                             ng-class="cell.value"
+                             ng-click="game.move(cell);">
+                            <div class="valuespan">
+                                <i class="fa fa-times fa-2x" ng-show="cell.value=='X'"></i>
+                                <i class="fa fa-circle-o fa-2x" ng-show="cell.value=='O'"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <p>
+                <div class="reset-panel">
+                    <button ng-click="game.reset();" class="btn btn-primary btn-large btn-newgame">New Game</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/GameScripts")

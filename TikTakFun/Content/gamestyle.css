@@ -1,0 +1,121 @@
+﻿.navbar-inverse {
+    background-color: #0a2680;
+    border-color: #0a2680;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #f8f5f5;
+    }
+
+.btn-primary {
+    color: #fff;
+    background-color: #0a2680;
+    border-color: #0a2680;
+}
+
+.X {
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.O {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
+
+.contentholder {
+    display: inline-block;
+}
+
+.btn-col {
+    min-width: 100px;
+    min-height: 100px;
+    border: 1px solid #ededed;
+    background-color: white;
+    vertical-align: middle;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+}
+    /*.btn-col:hover {
+        transform: rotateY( 180deg );
+    }*/
+    .btn-col:hover {
+        background-color: #ffffff;
+        transition: all 0.3s ease-out;
+        box-shadow: inset 0 0 0 25px #f7f7f8;
+    }
+
+    
+.gameresult {
+    max-width: 200px;
+    display: inline-block;
+}
+.well {
+    background-color: #fcfbfb;
+    border: 1px solid #fcfbfb;
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 20px;
+}
+.mainholder {
+    padding-top: 20px;
+}
+.gamecontentholder {
+    min-height: 300px;
+}
+.resultholder {
+    transition: all 0.3s ease-in;
+}
+
+.topcontainer {
+    min-height: 140px
+}
+.activeplayer {
+    background-color: #80007f;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+    transition: all 0.3s linear;
+}
+.notactiveplayer {
+    background-color: white;
+}
+.list-group-item {
+    padding: 20px 15px;
+}
+.btn-newgame {
+    min-height: 50px;
+    min-width: 200px;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #80007f;
+    border-color: #80007f;
+}
+.result-panel {
+    padding: 8px;
+    background-color: #f2f8f1;
+    border: 1px solid #bedfbe;
+    transition: all 0.3s ease-in;
+}
+.reset-panel {
+    padding: 20px
+}
+.X-Result {
+    color: green;
+}
+.O-Result {
+    color: red;
+}
+.span-result{
+   font-weight:bold;
+}
